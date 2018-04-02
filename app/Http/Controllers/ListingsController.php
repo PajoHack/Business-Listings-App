@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Listing;
 use Illuminate\Http\Request;
+use App\Listing;
 
 class ListingsController extends Controller
 {
