@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Listings;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -33,6 +33,6 @@ class User extends Authenticatable
      */
     public function listings()
     {
-        return $this->hasMany('App\Listing');
+        return $this->hasMany('Listings\Listing');
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Listings\Http\Controllers;
 
-use App\User;
+use Listings\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller

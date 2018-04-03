@@ -1,12 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Listings\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Listing;
+use Listings\Listing;
 
 class ListingsController extends Controller
 {
+    /**
+     * ListingsController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,9 @@ class ListingsController extends Controller
      */
     public function index()
     {
-        //
+        $listings = Listing::orderBy('created_at', 'desc')->get();
+
+        return view('listings', compact('listings'));
     }
 
     /**
@@ -63,7 +72,9 @@ class ListingsController extends Controller
      */
     public function show($id)
     {
-        //
+        $listing = Listing::find($id);
+
+        return view('showlisting', compact('listing'));
     }
 
     /**

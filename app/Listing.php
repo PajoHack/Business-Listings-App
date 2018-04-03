@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Listings;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,6 +8,6 @@ class Listing extends Model
 {
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('Listings\User');
     }
 }
